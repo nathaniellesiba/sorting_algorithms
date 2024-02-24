@@ -1,12 +1,6 @@
-in the best case
+void bubble_sort(int *array, size_t size);
 
-O(n)
-In the best case, the array is already sorted, and the algorithm only needs to make a single pass through the elements to confirm this.
-
-in the average case
-O(n^2)
-In the average case, the algorithm has to make multiple passes through the array to ensure that all elements are in the correct order.
-
-in the worst case
-O(n^2)
-In the worst case, the array is sorted in reverse order, and the algorithm needs to make the maximum number of comparisons and swaps at each step.
+/* Big O Notations for Bubble Sort Algorithm*/
+/* Best Case: O(n)*/
+/* Average Case: O(n^2)*/
+/* Worst Case: O(n^2)*/
