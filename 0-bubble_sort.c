@@ -5,12 +5,13 @@
  * @x: first int to swap
  * @y: second int to swap
  */
-void swap(int *x, int *y)
-{
+
+void swap(int *x, int *y) {
     int temp = *x;
     *x = *y;
     *y = temp;
 }
+
 
 /* bubble_sort - sort array of int in ascending order
  * @array: an array of int to sort
@@ -19,19 +20,22 @@ void swap(int *x, int *y)
  * Description: prints swapped array after each swap
  */
 
-void bubble_sort(int *array, size_t size) 
-{
-    for (size_t i = 0; i < size - 1; i++) {
-        for (size_t j = 0; j < size - i - 1; j++) {
-            if (array[j] > array[j + 1]) {
-                swap(&array[j], &array[j + 1]);
-                // Print the array after each swap
-                for (size_t k = 0; k < size; k++) {
-                    printf("%d ", array[k]);
-                }
-                printf("\n");
+void bubble_sort(int *array, size_t size) {
+    size_t i, len = size;
+    bool bubbly;
+
+    if (array == NULL || size < 2) {
+        return;
+    }
+
+    do {
+        bubbly = false;
+        for (i = 0; i < len - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                swap(&array[i], &array[i + 1]);
+                bubbly = true;
             }
         }
-    }
+        len--;
+    } while (bubbly);
 }
-
